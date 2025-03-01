@@ -4,6 +4,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { InterviewService } from '../../src/app/shared/services/interview.service';
 import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
+import { SharedInputComponent } from '../../src/app/shared/components/shared-input/shared-input.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('FormProductsComponent', () => {
   let component: FormProductsComponent;
@@ -12,7 +14,7 @@ describe('FormProductsComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ FormProductsComponent ],
-      imports: [ ReactiveFormsModule ]
+      imports: [ ReactiveFormsModule, SharedInputComponent, HttpClientModule ]
     }).compileComponents();
   }));
 

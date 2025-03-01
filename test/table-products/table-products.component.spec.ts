@@ -4,6 +4,9 @@ import { TableProductsComponent } from '../../src/app/modules/customer/component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { SharedInputComponent } from '../../src/app/shared/components/shared-input/shared-input.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormProductsComponent } from '../../src/app/modules/customer/components/form-products/form-products.component';
 
 describe('TableProductsComponent', () => {
   let component: TableProductsComponent;
@@ -12,7 +15,7 @@ describe('TableProductsComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ TableProductsComponent ],
-      imports: [ FormsModule, ReactiveFormsModule ],
+      imports: [ FormsModule, ReactiveFormsModule, SharedInputComponent, HttpClientModule ],
     }).compileComponents();
   }));
 
@@ -58,7 +61,9 @@ describe('TableProductsComponent - Navigation', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ TableProductsComponent ],
-      imports: [ FormsModule, ReactiveFormsModule, RouterTestingModule.withRoutes([]) ],
+      imports: [ FormsModule, ReactiveFormsModule, RouterTestingModule.withRoutes([
+        { path: 'form', component: FormProductsComponent }
+      ]), SharedInputComponent, HttpClientModule ],
     }).compileComponents();
   }));
 
@@ -85,7 +90,7 @@ describe('TableProductsComponent - Delete Button', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ TableProductsComponent ],
-      imports: [ FormsModule, ReactiveFormsModule ]
+      imports: [ FormsModule, ReactiveFormsModule, SharedInputComponent, HttpClientModule ]
     }).compileComponents();
   }));
 
@@ -126,7 +131,9 @@ describe('TableProductsComponent - Update Button', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ TableProductsComponent ],
-      imports: [ FormsModule, ReactiveFormsModule, RouterTestingModule.withRoutes([]) ],
+      imports: [ FormsModule, ReactiveFormsModule, RouterTestingModule.withRoutes([
+        { path: 'form', component: FormProductsComponent }
+      ]), SharedInputComponent, HttpClientModule ],
     }).compileComponents();
   }));
 
@@ -171,7 +178,7 @@ describe('TableProductsComponent - Select Functionality', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ TableProductsComponent ],
-      imports: [ FormsModule, ReactiveFormsModule ],
+      imports: [ FormsModule, ReactiveFormsModule, SharedInputComponent, HttpClientModule ],
     }).compileComponents();
   }));
 
