@@ -71,6 +71,11 @@ Actualizamos:
 y buscamos nuestro producto:
 ![image](https://github.com/user-attachments/assets/4151deaf-3d51-4803-adf5-59a0f4fc4a2c)
 
+## Coverage
+Por último tenemos el coverage de los test
+![image](https://github.com/user-attachments/assets/e4cfd94a-3335-43c8-abc2-7b76bb2fbde4)
+
+
 ### Gracias!
 
 
