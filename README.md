@@ -71,8 +71,17 @@ Actualizamos:
 y buscamos nuestro producto:
 ![image](https://github.com/user-attachments/assets/4151deaf-3d51-4803-adf5-59a0f4fc4a2c)
 
-## Coverage
+## Test & Coverage
+Vemos los test realizados para esta app, primero comenzamos con el componente table-products:
+
+![image](https://github.com/user-attachments/assets/d60075d8-d090-40a2-bfe3-92180add6122)
+
+form-products;
+
+![image](https://github.com/user-attachments/assets/c21df0ff-1847-4d1f-92fc-b1e072b35962)
+
 Por último tenemos el coverage de los test
+
 ![image](https://github.com/user-attachments/assets/e4cfd94a-3335-43c8-abc2-7b76bb2fbde4)
 
 
