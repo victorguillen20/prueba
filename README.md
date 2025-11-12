@@ -8,6 +8,7 @@ La aplicacion básicamente un `CRUD` que cumple con las siguientes funciones:
 * Registrar
 * Actualizar y
 * Eliminar
+  
 También muestra mensajes de succes y error de manera visual.
 
 A continuación, un vistazo a las pantallas de la app:
