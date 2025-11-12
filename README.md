@@ -83,7 +83,19 @@ form-products;
 
 Por último tenemos el coverage de los test
 
-![image](https://github.com/user-attachments/assets/e4cfd94a-3335-43c8-abc2-7b76bb2fbde4)
+![image](https://github.com/user-attachments/assets/e4cfd94a-3335-43c8-abc2-7b76bb2fbde4).
+
+## Skeletons
+
+Lista de productos
+
+<img width="1353" height="709" alt="imagen" src="https://github.com/user-attachments/assets/400801b5-476b-4845-8315-57cfa95d2357" />
+
+formulario de registo y formulario de actualización:
+
+<img width="1355" height="708" alt="imagen" src="https://github.com/user-attachments/assets/9723e458-d3b6-402c-8fac-68e9876fc951" />
+
+
 
 
 ### Gracias!
