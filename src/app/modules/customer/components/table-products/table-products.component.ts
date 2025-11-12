@@ -14,6 +14,7 @@ export class TableProductsComponent implements OnInit {
   selectedOption: number = 5;  
   deleteModalVisible: boolean = false;
   productToDelete: ProductI | null = null;
+  isLoading: boolean = false;
 
   alertMessage: string = '';
   alertType: 'success' | 'error' = 'success';
@@ -28,12 +29,19 @@ export class TableProductsComponent implements OnInit {
   }
 
   loadProducts(): void {
+    this.isLoading = true;
     this.serviceProducts.consultProduct().subscribe({
       next: (res: any) => {
-
-        this.products = res.data;
+        // Simulamos un delay mínimo para ver el skeleton
+        setTimeout(() => {
+          this.products = res.data;
+          this.isLoading = false;
+        }, 800);
       },
-      error: (err) => console.error('Error al cargar productos', err)
+      error: (err) => {
+        console.error('Error al cargar productos', err);
+        this.isLoading = false;
+      }
     });
   }
 
@@ -53,6 +61,11 @@ export class TableProductsComponent implements OnInit {
  
   get pagedProducts(): ProductI[] {
     return this.filteredProducts.slice(0, this.selectedOption);
+  }
+
+  // Método para generar array de skeleton loaders
+  get skeletonRows(): any[] {
+    return Array(this.selectedOption).fill(0);
   }
 
   navigateToForm(): void {

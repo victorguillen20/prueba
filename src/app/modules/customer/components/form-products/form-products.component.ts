@@ -22,6 +22,8 @@ import { InterviewService } from '../../../../shared/services/interview.service'
 export class FormProductsComponent implements OnInit {
   productDataForm!: FormGroup;
   isUpdateMode: boolean = false;
+  isLoading: boolean = false;
+  isSubmitting: boolean = false;
   alertMessage: string = '';
   alertType: 'success' | 'error' = 'success';
 
@@ -31,8 +33,14 @@ export class FormProductsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.isLoading = true;
     this.buildForm();
-    this.subscribeChange();
+    
+    // Simulamos carga inicial del formulario
+    setTimeout(() => {
+      this.subscribeChange();
+      this.isLoading = false;
+    }, 1000);
   }
 
   buildForm() {
@@ -111,6 +119,7 @@ export class FormProductsComponent implements OnInit {
 
   onSubmit(): void {
     if (this.productDataForm.valid) {
+      this.isSubmitting = true;
       let formData = this.productDataForm.getRawValue();
 
       formData.date_release = formatDate(formData.date_release);
@@ -119,21 +128,29 @@ export class FormProductsComponent implements OnInit {
       if (this.isUpdateMode) {
         this.serviceProducts.updateProduct(formData.id, formData).subscribe({
           next: (response) => {
-            this.productDataForm.reset();
-            this.alertMsg('success', 'Producto actualizado');
+            setTimeout(() => {
+              this.productDataForm.reset();
+              this.alertMsg('success', 'Producto actualizado');
+              this.isSubmitting = false;
+            }, 1200);
           },
           error: (error) => {
             this.alertMsg('error', 'Error al actualizar producto');
+            this.isSubmitting = false;
           },
         });
       } else {
         this.serviceProducts.registryProduct(formData).subscribe({
           next: (response) => {
-            this.productDataForm.reset();
-            this.alertMsg('success', 'Producto Registrado');
+            setTimeout(() => {
+              this.productDataForm.reset();
+              this.alertMsg('success', 'Producto Registrado');
+              this.isSubmitting = false;
+            }, 1200);
           },
           error: (error) => {
             this.alertMsg('error', 'Error al registrar producto');
+            this.isSubmitting = false;
           },
         });
       }
